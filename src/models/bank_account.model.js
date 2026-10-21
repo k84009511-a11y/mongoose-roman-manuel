@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-export const bankAccountSchema = new Schema({
+const bankAccountSchema = new Schema({
   cbu: {
     type: String,
     required: true,
@@ -10,3 +10,5 @@ export const bankAccountSchema = new Schema({
     required: true,
   },
 });
+
+export const bankAccountModel = model("BankAccount", bankAccountSchema);

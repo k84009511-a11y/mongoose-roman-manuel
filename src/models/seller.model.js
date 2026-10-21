@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-export const sellerSchema = new Schema({
+const sellerSchema = new Schema({
   nombreComercial: {
     type: String,
     required: true,
@@ -10,4 +10,10 @@ export const sellerSchema = new Schema({
     required: true,
     unique: true,
   },
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+export const sellerModel = model("Seller", sellerSchema);

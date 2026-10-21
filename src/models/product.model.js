@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-export const specificationsSchema = new Schema(
+const specificationsSchema = new Schema(
   {
     marca: {
       type: String,
@@ -25,4 +25,10 @@ export const productSchema = new Schema({
     required: true,
   },
   especificaciones: specificationsSchema,
+  deleted: {
+    type: Boolean,
+    default: false,
+  },
 });
+
+export const productModel = model("Product", productSchema);
